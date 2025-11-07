@@ -23,16 +23,17 @@ const io = initSocket(server);
 // Configurar manejadores
 setupClientHandlers(io);
 setupDriverHandlers(io);
-setupTripHandlers(io); 
+setupTripHandlers(io);
 
 // iniciar servidor en el puerto especificado
-server.listen(8080, HOST, () => {
+server.listen(PORT, HOST, () => {
 
     console.log('=== BACKEND NODE KS + MONGODB ===');
     console.log(` Acceso local: http://localhost:${PORT}`);
     console.log(` Acceso desde la red: http://[TU-IP]:${PORT}`);
-    console.log(` Puerto:${PORT}`);
-    console.log(` Servidor listo para pruebas externas}`);
+    console.log(` Puerto: ${PORT}`);
+    console.log(` Documentación API: http://localhost:${PORT}/api-docs`);
+    console.log(` Servidor listo para pruebas externas`);
 }).on('error', (error) => {
     console.error("Error al iniciar el servidor", error);
 });
